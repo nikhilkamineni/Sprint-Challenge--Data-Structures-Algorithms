@@ -1,18 +1,26 @@
+# def heapsort(arr):
+#   heap = Heap()
+#   sorted = []
+
+#   for el in arr:
+#     heap.insert(el)
+
+#   while heap.get_size() > 0:
+#     sorted.insert(0, heap.delete())
+
+#   return sorted
+
 def heapsort(arr):
-  # initializine our heap
   heap = Heap()
-  sorted = []
+  sorted = [0] * len(arr)
 
   for el in arr:
     heap.insert(el)
 
-  while heap.get_size() > 0:
-    sorted.append(heap.delete())
-
-  sorted.reverse()
+  for i in range(len(arr)):
+    sorted[len(arr) - i - 1] = heap.delete()
 
   return sorted
-
 
 class Heap:
   def __init__(self):
